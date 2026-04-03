@@ -151,6 +151,31 @@ export default function App() {
   });
 
   const [registrationCount, setRegistrationCount] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
+
+  useEffect(() => {
+    const targetDate = new Date("February 26, 2027 09:30:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, mins: 0, secs: 0 });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        mins: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        secs: Math.floor((distance % (1000 * 60)) / 1000)
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const fetchCount = async () => {
     const { count } = await supabase
@@ -309,6 +334,25 @@ Thank you! 🙏
           <p className="text-white/60 text-[16px] tracking-[3px] uppercase mb-12">
             Transform your ideas into functional applications
           </p>
+
+          {/* Countdown Timer */}
+          <div className="flex gap-4 md:gap-8 mb-12">
+            {[
+              { label: "DAYS", value: timeLeft.days },
+              { label: "HOURS", value: timeLeft.hours },
+              { label: "MINS", value: timeLeft.mins },
+              { label: "SECS", value: timeLeft.secs }
+            ].map((unit, idx) => (
+              <div key={idx} className="flex flex-col items-center">
+                <div className="text-[42px] md:text-[64px] font-[900] text-[#2563EB] leading-none drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+                  {unit.value.toString().padStart(2, '0')}
+                </div>
+                <div className="text-[10px] md:text-[12px] text-white/40 tracking-[3px] mt-2 font-bold uppercase">
+                  {unit.label}
+                </div>
+              </div>
+            ))}
+          </div>
 
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 mb-12 text-[13px] text-white/90">
             <div className="flex items-center gap-2 pr-6 border-r border-white/10 last:border-0">
