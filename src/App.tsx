@@ -489,6 +489,50 @@ Thank you! 🙏
         </p>
       </section>
 
+      {/* Previous Year Reference Section */}
+      <section className="py-24 px-4 max-w-4xl mx-auto">
+        <SectionHeading>PREVIOUS YEAR REFERENCE</SectionHeading>
+        <div className="bg-[#0D1B2A] rounded-[16px] p-8 border border-white/5">
+          <div className="w-full bg-[#2563EB]/5 border-l-[3px] border-[#2563EB] p-4 mb-8">
+            <p className="text-[#2563EB] text-[13px] font-medium">
+              📚 Check out last year's winning presentation to get inspired for Idea2App 2027!
+            </p>
+          </div>
+
+          <div className="bg-[#0a0f1e] border border-[#2563EB]/20 rounded-[10px] p-8 max-w-[400px] mx-auto text-center">
+            <div className="text-[40px] text-[#2563EB] mb-4 flex justify-center">📊</div>
+            
+            <h3 className="text-white font-bold text-[14px] mt-2 mb-1">
+              Idea2App — Previous Year Winning Presentation
+            </h3>
+            <p className="text-[#8b949e] text-[11px] mb-6 uppercase tracking-wider">
+              Reference PPT | Idea2App 2026
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              <button 
+                onClick={() => window.open('https://docs.google.com/presentation/d/1kHMm64gE8ofrTWSQU3d_Mx5GrqJt58xb/edit?rtpof=true', '_blank')}
+                className="bg-transparent border border-[#2563EB]/50 text-[#2563EB] px-5 py-2.5 rounded-[6px] text-[12px] font-bold transition-all hover:bg-[#2563EB]/10"
+              >
+                👁 View PPT
+              </button>
+              <button 
+                onClick={() => window.open('https://docs.google.com/presentation/d/1kHMm64gE8ofrTWSQU3d_Mx5GrqJt58xb/export/pptx', '_blank')}
+                className="bg-[#2563EB] text-white px-5 py-2.5 rounded-[6px] text-[12px] font-bold transition-all hover:bg-[#1D4ED8]"
+              >
+                ⬇ Download PPT
+              </button>
+            </div>
+
+            <div className="border-l-[2px] border-[#2563EB]/40 bg-[#2563EB]/[0.03] p-2.5 mt-6 text-left">
+              <p className="text-[#2563EB]/60 text-[10px] leading-relaxed">
+                💡 Tip: This is for reference only. Your idea must be original and different.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Payment Details Section */}
       <section className="py-24 px-4 max-w-3xl mx-auto">
         <SectionHeading>Payment Details</SectionHeading>
@@ -531,6 +575,64 @@ Thank you! 🙏
 
           <div className="w-full bg-[#2563EB]/5 border-l-[2px] border-[#2563EB] p-3">
             <p className="text-[#2563EB] text-sm flex items-center gap-2">
+              <Info className="w-4 h-4" /> 📋 Note: NNRG TechFest - Idea2App
+            </p>
+          </div>
+        </div>
+
+        {/* Divider Between Cards */}
+        <div className="flex items-center gap-4 my-12">
+          <div className="flex-1 h-[1px] bg-white/10" />
+          <div className="bg-[#1A1A2E] border border-[#2563EB]/30 text-[#2563EB]/80 text-[9px] tracking-[3px] px-3.5 py-1.5 rounded-full uppercase font-bold">
+            OR | ALTERNATIVE
+          </div>
+          <div className="flex-1 h-[1px] bg-white/10" />
+        </div>
+
+        {/* Alternative Payment Card */}
+        <div className="bg-[#0D1B2A] rounded-[16px] p-8 border border-white/5 flex flex-col items-center relative overflow-hidden">
+          {/* Alternative Badge */}
+          <div className="absolute top-4 right-4 border border-[#2563EB]/50 text-[#2563EB] text-[9px] font-bold tracking-[2px] px-2 py-1 rounded-[4px] uppercase">
+            ALTERNATIVE
+          </div>
+
+          <div className="w-full bg-[#2563EB]/5 border-l-[3px] border-[#2563EB]/50 p-4 mb-8">
+            <p className="text-[#2563EB]/80 text-[11px] leading-relaxed">
+              ⚡ Use this UPI ID if the primary payment option has reached its daily transaction limit.
+            </p>
+          </div>
+
+          <p className="text-[#6e7681] text-[9px] tracking-[3px] uppercase mb-6">SCAN QR CODE TO PAY</p>
+          
+          <div className="bg-white p-2 rounded-[8px] mb-8">
+            <img 
+              src="https://quickchart.io/qr?text=upi://pay?pa=6301523538-id6e@axl%26pn=Nithish%26am=100%26cu=INR%26tn=NNRG_TechFest_Idea2App&size=300" 
+              alt="Alternative Payment QR"
+              className="w-[260px] h-[260px]"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
+            <div className="space-y-1">
+              <p className="text-[#6e7681] text-[10px] uppercase tracking-wider">UPI ID</p>
+              <p className="text-[#2563EB] font-mono text-sm">6301523538-id6e@axl</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[#6e7681] text-[10px] uppercase tracking-wider">PHONE</p>
+              <p className="text-[#2563EB] font-mono text-sm">6301523538</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[#6e7681] text-[10px] uppercase tracking-wider">NAME</p>
+              <p className="text-white font-bold">NITHISH</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[#6e7681] text-[10px] uppercase tracking-wider">AMOUNT</p>
+              <p className="text-[#22C55E] font-bold text-lg">₹100</p>
+            </div>
+          </div>
+
+          <div className="w-full bg-[#2563EB]/[0.03] border-l-[2px] border-[#2563EB]/50 p-3">
+            <p className="text-[#2563EB]/70 text-sm flex items-center gap-2">
               <Info className="w-4 h-4" /> 📋 Note: NNRG TechFest - Idea2App
             </p>
           </div>
